@@ -11,14 +11,32 @@ services:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
 
-    # makes classes in src/ available to be used as services
-    # this creates a service per class whose id is the fully-qualified class name
-    App\:
-        resource: '../src/'
+    App\Assistant\:
+        resource: '../src/Assistant/'
         exclude:
-            - '../src/DependencyInjection/'
-            - '../src/Entity/'
-            - '../src/Kernel.php'
+            - '../src/Assistant/Application/Command/'
+            - '../src/Assistant/Domain/Entity/'
+            - '../src/Assistant/Domain/Event/'
+            - '../src/Assistant/Domain/Exception/'
+            - '../src/Assistant/Domain/Model/'
+            - '../src/Assistant/Domain/ValueObject/'
 
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+    App\Shared\:
+        resource: '../src/Shared/'
+        exclude:
+            - '../src/Shared/Domain/Command/AsyncCommandInterface.php'
+            - '../src/Shared/Domain/Command/CommandInterface.php'
+            - '../src/Shared/Domain/ValueObject'
+
+    _instanceof:
+        App\Shared\Domain\Command\CommandHandlerInterface:
+            tags:
+                - { name: messenger.message_handler, bus: command.bus }
+
+        App\Shared\Domain\Command\AsyncCommandHandlerInterface:
+            tags:
+                - { name: messenger.message_handler, bus: command.bus.async }
+
+        App\Shared\Domain\Query\QueryHandlerInterface:
+            tags:
+                - { name: messenger.message_handler, bus: query.bus }

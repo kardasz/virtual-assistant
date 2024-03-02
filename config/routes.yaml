@@ -1,5 +1,5 @@
-controllers:
+assistant:
     resource:
-        path: ../src/Controller/
-        namespace: App\Controller
+        path: ../src/Assistant/Infrastructure/Controller/
+        namespace: App\Assistant\Infrastructure\Controller
     type: attribute
