@@ -9,7 +9,8 @@ use App\Assistant\Domain\Event\AssistantCreated;
 class Assistant extends AggregateRoot
 {
     public readonly AssistantId $assistantId;
-
+    public readonly string $firstName;
+    
     public static function createNew(
         AssistantId $assistantId,
     ): self {
