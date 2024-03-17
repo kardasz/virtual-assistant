@@ -10,6 +10,7 @@ class Assistant extends AggregateRoot
 {
     public readonly AssistantId $assistantId;
     public readonly string $firstName;
+    public readonly string $lastName;
     
     public static function createNew(
         AssistantId $assistantId,
