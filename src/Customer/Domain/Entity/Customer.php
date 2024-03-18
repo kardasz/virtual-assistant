@@ -11,6 +11,7 @@ class Customer extends AggregateRoot
     public readonly CustomerId $customerId;
     public readonly string $firstName;
     public readonly string $lastName;
+    public readonly string $email;
     
     public static function createNew(
         CustomerId $customerId,
