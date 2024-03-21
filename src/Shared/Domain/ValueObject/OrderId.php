@@ -6,7 +6,7 @@ namespace App\Shared\Domain\ValueObject;
 
 use Symfony\Component\Uid\Uuid;
 
-class AssistantId extends Uuid implements \Stringable
+class OrderId extends Uuid implements \Stringable
 {
     public static function generate(): self
     {
