@@ -10,6 +10,7 @@ readonly class CreateOrder implements CommandInterface
     public function __construct(
         public OrderId $orderId,
         public string $title,
+        public string $description,
     ) {
     }
 }
