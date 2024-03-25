@@ -9,6 +9,7 @@ use App\Shared\Domain\ValueObject\CalendarId;
 class Calendar extends AggregateRoot
 {
     public CalendarId $CalendarId;
+    public string $title;
 
     public static function createNew(CalendarId $CalendarId): self
     {
