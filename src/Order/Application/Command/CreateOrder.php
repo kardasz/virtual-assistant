@@ -11,7 +11,7 @@ readonly class CreateOrder implements CommandInterface
         public OrderId $orderId,
         public string $title,
         public string $description,
-        public $createdAt,
+        public \DateTimeImmutable $expiresAt,
     ) {
     }
 }
