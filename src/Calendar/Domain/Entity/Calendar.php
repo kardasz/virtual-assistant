@@ -10,6 +10,7 @@ class Calendar extends AggregateRoot
 {
     public CalendarId $CalendarId;
     public string $title;
+    public bool $repeat;
 
     public static function createNew(CalendarId $CalendarId): self
     {
