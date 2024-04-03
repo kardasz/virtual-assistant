@@ -10,7 +10,8 @@ use App\Shared\Domain\ValueObject\CalendarId;
 class CalendarCreated extends DomainEvent
 {
     public readonly CalendarId $CalendarId;
-
+    public string $title;
+    
     public static function withData(CalendarId $CalendarId): self
     {
         $event = new self((string) $CalendarId);
