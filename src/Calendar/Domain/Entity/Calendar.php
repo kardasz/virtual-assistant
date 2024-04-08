@@ -11,7 +11,6 @@ class Calendar extends AggregateRoot
     public CalendarId $CalendarId;
     public string $title;
     public bool $repeat;
-    public string $description;
 
     public static function createNew(CalendarId $CalendarId): self
     {
