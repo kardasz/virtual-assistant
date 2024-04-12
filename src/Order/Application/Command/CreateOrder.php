@@ -9,6 +9,7 @@ readonly class CreateOrder implements CommandInterface
 {
     public function __construct(
         public OrderId $orderId,
+        public string $orderingPartyId,
         public string $title,
         public string $description,
         public \DateTimeImmutable $expiresAt,

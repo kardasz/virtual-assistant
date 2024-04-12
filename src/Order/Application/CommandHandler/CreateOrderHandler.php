@@ -21,8 +21,9 @@ readonly class CreateOrderHandler implements CommandHandlerInterface
             orderId: OrderId::generate(),
             title: $command->title,
         );
+
         $this->orderRepository->persist($order);
 
-        return $order;//
+        return $order;
     }
 }
