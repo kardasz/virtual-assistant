@@ -11,4 +11,6 @@ class OrderDto
     #[Assert\Uuid]
     #[SerializedName('order_id')]
     public string $orderId;
+    
+    public string $description;
 }
