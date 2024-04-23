@@ -3,19 +3,23 @@ q<?php
 namespace App\Order\Domain\Entity;
 
 use App\Shared\Domain\AggregateRoot;
+use App\Shared\Domain\ValueObject\CustomerId;
 use App\Shared\Domain\ValueObject\OrderId;
 use App\Order\Domain\Event\OrderCreated;
 
 class Order extends AggregateRoot
 {
     public readonly OrderId $orderId;
-    public readonly string $firstName;
-    public readonly string $lastName;
+    public readonly CustomerId $orderingPartyId;
+    public readonly string $description;
     public readonly \DateTimeImmutable $expiresAt;
-    
+
     public static function createNew(
         OrderId $orderId,
         string $title,
+        CustomerId $orderingPartyId,
+        string $description,
+        \DateTimeImmutable $expiresAt,
     ): self {
         $order = new self();
         $order->recordThat(OrderCreated::withData(
