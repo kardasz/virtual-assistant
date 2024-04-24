@@ -10,7 +10,7 @@ use App\Shared\Domain\ValueObject\CalendarId;
 class CalendarCreated extends DomainEvent
 {
     public readonly CalendarId $CalendarId;
-    public string $title;
+    public readonly string $title;
     public \DateTimeImmutable $createdAt;
     
     public static function withData(CalendarId $CalendarId): self
