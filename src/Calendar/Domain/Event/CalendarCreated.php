@@ -16,7 +16,7 @@ class CalendarCreated extends DomainEvent
     public static function withData(CalendarId $CalendarId): self
     {
         $event = new self((string) $CalendarId);
-        $event->CalendarId = $CalendarId;
+        $event->calendarId = $CalendarId;
 
         return $event;
     }
