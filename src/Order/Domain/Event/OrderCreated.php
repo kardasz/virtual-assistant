@@ -16,11 +16,13 @@ class OrderCreated extends DomainEvent
 
     public static function withData(
         OrderId $orderId,
+        CustomerId $orderingPartyId,
         string $title,
     ): self {
         $event = new self((string) $orderId);
         $event->orderId = $orderId;
         $event->title = $title;
+        $event->orderingPartyId = $orderingPartyId;
         return $event;
     }
 
