@@ -10,6 +10,7 @@ readonly class CreateAssistant implements CommandInterface
     public function __construct(
         public AssistantId $assistantId,
         public string $firstName,
+        public string $lastName,
     ) {
     }
 }
