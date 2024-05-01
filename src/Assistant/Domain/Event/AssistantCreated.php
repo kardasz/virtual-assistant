@@ -9,6 +9,8 @@ class AssistantCreated extends DomainEvent
 {
     public readonly AssistantId $assistantId;
     public readonly string $firstName;
+    public readonly string $lastName;
+    
     public static function withData(
         AssistantId $assistantId,
     ): self {
