@@ -8,7 +8,8 @@ use App\Shared\Domain\ValueObject\CustomerId;
 class CustomerCreated extends DomainEvent
 {
     public readonly CustomerId $customerId;
-
+    public readonly string $firstName;
+    
     public static function withData(
         CustomerId $customerId,
     ): self {
