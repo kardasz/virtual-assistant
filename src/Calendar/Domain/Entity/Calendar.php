@@ -11,6 +11,7 @@ class Calendar extends AggregateRoot
     public CalendarId $CalendarId;
     public string $title;
     public bool $repeat;
+    public \DateTimeImmutable $createdAt
 
     public static function createNew(CalendarId $CalendarId): self
     {
