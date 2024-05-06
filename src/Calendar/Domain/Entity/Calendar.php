@@ -9,7 +9,7 @@ use App\Shared\Domain\ValueObject\CalendarId;
 class Calendar extends AggregateRoot
 {
     public CalendarId $CalendarId;
-    public string $title;
+    public string $title2;
     public bool $repeat;
     public \DateTimeImmutable $createdAt
 
