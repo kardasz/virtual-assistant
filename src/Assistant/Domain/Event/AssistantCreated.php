@@ -10,6 +10,7 @@ class AssistantCreated extends DomainEvent
     public readonly AssistantId $assistantId;
     public readonly string $firstName;
     public readonly string $lastName;
+    public readonly string $displayName;
     public readonly array $priceList;
     
     public static function withData(
