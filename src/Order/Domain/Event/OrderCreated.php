@@ -12,7 +12,6 @@ class OrderCreated extends DomainEvent
     public readonly string $title;
     public readonly CustomerId $orderingPartyId;
     public readonly string $description;
-    public steing $summary;
     public readonly \DateTimeImmutable $expiresAt;
 
     public static function withData(
