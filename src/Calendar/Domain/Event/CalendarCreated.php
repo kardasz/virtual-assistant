@@ -11,7 +11,7 @@ class CalendarCreated extends DomainEvent
 {
     public readonly CalendarId $CalendarId;
     public readonly string $title;
-    public readonly \DateTime $time2;
+    public readonly \DateTime $time;
     public \DateTimeImmutable $createdAt;
     
     public static function withData(CalendarId $CalendarId): self
